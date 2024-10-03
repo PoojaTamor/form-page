@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warranty Card Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      body {
+        background-color: #f4f4f4;
+      }
+      /* For primary headings and titles */
+      h1,
+      h2,
+      h3,
+      .section-title {
+        font-family: "Poppins", sans-serif; /* You can substitute with 'Montserrat' or 'Roboto' */
+        font-weight: 600; /* For bold, clean headings */
+      }
+
+      /* For secondary text and labels */
+      body,
+      p,
+      label,
+      .form-text {
+        font-family: "Roboto", sans-serif; /* You can substitute with 'Lato' or 'Open Sans' */
+        font-weight: 400;
+      }
+
+      /* General CSS to import these fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap");
+
+      .container {
+        margin-top: 40px;
+      }
+
+      .warranty-card {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: white;
+      }
+
+      .left-section {
+        background-color: #f9f9f9;
+        padding-left: 0px;
+        padding-right: 0px;
+        /* padding-inline: 20px; */
+      }
+       
+      .right-section {
+        background-color: #000;
+        color: white;
+        padding: 20px;
+      }
+
+      h2,
+      h3 {
+        font-weight: bold;
+      }
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        font-weight: 600;
+      }
+
+      .form-control {
+        border-radius: 8px;
+      }
+
+      /* .coverage-tags span {
+        background-color: #fff;
+        color: #000;
+        border-radius: 30px;
+        padding: 5px 10px;
+        font-size: 12px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+      } */
+
+      .yellow-bg {
+        background: linear-gradient(86deg, #fdd835, #fae08b);
+
+        color: #000;
+        /* text-align: center; */
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      button {
+        background-color: #ffcc00;
+        color: #000;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #e6b800;
+      }
+      .custom-input {
+        background-color: #f0f0f0; /* Light grey background */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        height: 50px; /* Custom height for larger input */
+        padding-left: 15px; /* Padding inside the input */
+        font-size: 1rem; /* Font size */
+      }
+
+      .custom-input:focus {
+        outline: none; /* Remove default focus outline */
+        box-shadow: none; /* Remove shadow on focus */
+        border: 2px solid #ccc;
+      }
+ 
+
+
+
+      .form-label {
+        font-weight: bold;
+      }
+      .custom-input1 {
+        border: none;
+        background-color: transparent;
+      }
+
+      .text-muted1 {
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+
+      h4 {
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .left-heading{
+        font-weight: 100;
+
+      }
+      .left-heading span{
+        font-weight: bold;
+      }
+      .form-control:focus input[type="text"] {
+        background-color: transparent;
+
+        outline: 0;
+      }
+
+      /* Group container */
+      .checkbox-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      /* Hide default checkbox */
+      .custom-checkbox input[type="checkbox"] {
+        display: none;
+      }
+
+      /* Style the label as button-like */
+      .custom-checkbox {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: #fff;
+        color: #000;
+        border-radius: 30px;
+        padding: 5px 10px;
+        font-size: 12px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      /* Checked state styles */
+      .custom-checkbox input[type="checkbox"]:checked + span {
+        background-color: #ffc107; /* Yellow background */
+        color: #fff;
+        padding: 5px 10px;
+      }
+
+      /* Styling the span element */
+      .custom-checkbox span {
+        padding: 5px 10px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+      .right-heading{
+        font-size: 45px;
+        font-weight: 100;
+        color: rgb(196, 196, 196);
+      }
+
+      /* Hover effect for better interaction */
+
+      /* Section background and general text */
+      .form-section {
+        background-color: #000; /* Dark background */
+        /* padding: 20px; */
+        color: #fff;
+        font-family: "Arial", sans-serif;
+      }
+
+      .submitbtn {
+        background-color: #e6b800;
+      }
+      .submitbtn:hover {
+        background-color: #e6b800;
+        color: #000;
+      }
+      .service-lable{
+        font-size: 20px;
+      }
+      .btn-check:checked + .btn,
+      .btn.active,
+      .btn.show,
+      .btn:first-child:active,
+      :not(.btn-check) + .btn:active {
+        background-color: #e6b800;
+        color: #000;
+      }
+
+      /* File Upload Styling */
+      .file-upload {
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .upload-btn {
+        background-color: #fff; /* White background for button */
+        border: 1px solid #ccc; /* Light grey border */
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #000; /* Black text color */
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      .upload-btn i {
+        margin-right: 10px; /* Space for the icon */
+      }
+
+      /* Styling the labels */
+      .form-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+      }
+ 
+input[type="date"]{
+  background-color: transparent;
+  color: gray;
+  border: none;
+  font-size: 18px;
+
+}
+
+      .form-text {
+        color: #999; /* Muted grey color */
+        font-size: 0.85rem;
+      }
+      .lest-div{
+        padding-inline: 3rem;
+      }
+
+      @media (max-width: 768px) {
+        .warranty-card {
+          flex-direction: column;
+        }
+        .lest-div{
+        padding-inline: 2rem;
+      }
+      .Vehiclerow{
+        font-size: 10px;
+        text-align: center;
+      }
+      h4 ,.numberlable , .namelable
+      {
+        font-size: 16px;
+      }
+      .toprow{
+        padding-inline: 12px;
+      }
+      
+      .container {
+    margin-top: 0px;
+}
+.warranty-card {
+    border-radius: 0px;
+ 
+}
+.serviceotlet{
+    font-size: 14px
+}
+
+.yellow-bg p{
+    font-size: 16px;
+}
+.right-heading{
+    font-size: 22px;
+}
+.service-lable {
+    font-size: 16px;
+}
+.form-text {
+        color: #999; /* Muted grey color */
+        font-size: 0.75rem;
+      }
+      .upload-btn {
+  
+    font-size: 12px;
+   
+}
+input[type="date"]{
+
+  font-size: 16px;
+}
+.left-heading{
+        font-weight: 100;
+        padding-left: 17px;
+        padding-bottom: 20px;
+        
+      }
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+        <form class="">
+          <div class="row warranty-card ">
+            <div class="col-lg-8 left-section">
+
+              <div class="lest-div">
+                <h2 class="left-heading text-muted mt-4 mt-sm-3">
+                  Warranty Card <br /><span class="text-dark">Details</span>
+                </h2>
+                <div class="row  pt-sm-5 toprow " >
+                  <div class="col-md-6 mb-3">
+                    <label for="customerName" class="form-label namelable">Customer Name</label>
+                    <input type="text" class="form-control custom-input" id="customerName" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phoneNumber" class="form-label numberlable">Phone Number <span class="text-muted text-muted1">(Whatsapp Must)</span></label>
+                    <input type="text" class="form-control custom-input " id="phoneNumber" />
+                  </div>
+                </div>
+      
+                <h4 class="pt-md-3">Vehicle Information</h4>
+                <div class="row pt-md-3 gx-sm-0 gx-2 Vehiclerow">
+                  <div class="col-3 mb-3">
+                    <label for="vehicleType" class="form-label">Vehicle Type</label>
+                    <input type="text" class="form-control custom-input1 border-bottom" id="vehicleType" placeholder="" />
+                  </div>
+                  <div class="col-3 mb-3">
+                    <label for="modelNumber" class="form-label">Model & Number</label>
+                    <input type="text" class="form-control custom-input1 border-bottom" id="modelNumber" placeholder="" />
+                  </div>
+                  <div class="col-3 mb-3">
+                    <label for="color" class="form-label">Color</label>
+                    <input type="text" class="form-control custom-input1 border-bottom" id="color" placeholder="" />
+                  </div>
+                  <div class="col-3 mb-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="text" class="form-control custom-input1 border-bottom" id="year" placeholder="" />
+                  </div>
+                </div>
+      
+                <div class="mb-3 col-6 pt-md-4">
+                  <label for="serviceOutlet" class="form-label serviceotlet">Select the Service Outlet</label>
+                  <input type="text" class="form-control custom-input1 border-bottom" id="serviceOutlet" />
+                </div>
+              </div>
+             
+               <div class="yellow-bg  py-1">
+        <p class="ps-4 ps-sm-5">Our promise to you – <br> <strong>Quality & Satisfaction</strong></p>
+      </div>
+            </div>
+      
+            <div class="col-lg-4 right-section p-4">
+              <h3 class="right-heading">Our warranty  <br><span class="fw-bold text-white">includes coverage for</span></h3>
+      
+              <div class="checkbox-group my-4">
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="series" value="Optimum Series" />
+                  <span>Optimum Series</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="series" value="Supreme Series" />
+                  <span>Supreme Series</span>
+                </label>
+              </div>
+      
+              <div class="form-section">
+                <!-- Service Date -->
+                <div class="form-group d-flex align-items-center my-md-4 my-2">
+                  <label for="serviceDate" class="form-label col-7 service-lable">Service Date</label>
+                  <input type="date" class="form-control date-input" id="serviceDate" placeholder="MM / DD / YY" />
+                </div>
+      
+                <!-- Upload Picture of Vehicle -->
+                <div class="form-group my-4">
+                  <label for="vehiclePicture" class="form-label service-lable">Upload picture of vehicle</label>
+                  <small class="form-text">Upload 1 supported file: PDF, document, or image. Max 1 GB</small>
+                  <div class="file-upload mt-3">
+                    <label for="vehiclePicture" class="upload-btn">
+                      <input type="file" id="vehiclePicture" style="display: none" />
+                      <i class="bi bi-upload"></i> Add File
+                    </label>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="mb-3 d-flex align-items-center">
+                <label for="amountPaid" class="form-label col-sm-9  col-6 service-lable">Total Amount Paid</label>
+                <input type="text" class="form-control" id="amountPaid" placeholder="₹" />
+              </div>
+              <button type="submit" class="btn w-100 submitbtn mt-sm-2">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
